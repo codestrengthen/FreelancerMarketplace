@@ -18,11 +18,10 @@ class Category extends Component {
                 return results.json();
             })
             .then(data => {
-
                 let cats = data.map((cat) => {
                     return (
                     <div id={cat.categoryId} key={cat.categoryId}
-                        className={cat.parentCategoryId != null ? 'children' : null}>
+                        className={cat.parentCategoryId ? 'children' : null}>
                             <Link to={{ pathname: `/explore-services/${cat.categoryId}` }}>{cat.categoryName}</Link>                         
                     </div>
                 )
