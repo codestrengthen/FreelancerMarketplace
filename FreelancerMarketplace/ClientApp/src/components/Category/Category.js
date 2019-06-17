@@ -1,5 +1,7 @@
 ﻿import React, { Component } from 'react';
 
+import './Category.css';
+
 class Category extends Component {
     constructor() {
         super();
@@ -10,15 +12,16 @@ class Category extends Component {
 
     componentDidMount() {
         fetch('https://localhost:44394/api/category/GetCategories')
-        .then(results => {
-            return results.json();
-        })
-        .then(data => {
-            let cats = data.map((cat) => {
-                return (
-                    <div id={cat.categoryId}>
-                        <p>{cat.categoryName}</p>
-                    </div>
+            .then(results => {
+                return results.json();
+            })
+            .then(data => {
+                let cats = data.map((cat) => {
+                    return (
+                        <div id={cat.categoryId} key={cat.categoryId}
+                            className={cat.parentCategoryId != null ? 'children' : null}>
+                            <p>{cat.categoryName}</p>
+                        </div>
                 )
             })
             this.setState({ categories: cats });
