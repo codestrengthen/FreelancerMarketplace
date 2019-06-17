@@ -1,4 +1,5 @@
 ﻿import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Category.css';
 
@@ -11,21 +12,24 @@ class Category extends Component {
     }
 
     componentDidMount() {
+      
         fetch('https://localhost:44394/api/category/GetCategories')
             .then(results => {
                 return results.json();
             })
             .then(data => {
+
                 let cats = data.map((cat) => {
                     return (
-                        <div id={cat.categoryId} key={cat.categoryId}
-                            className={cat.parentCategoryId != null ? 'children' : null}>
-                            <p>{cat.categoryName}</p>
-                        </div>
+                    <div id={cat.categoryId} key={cat.categoryId}
+                        className={cat.parentCategoryId != null ? 'children' : null}>
+                            <Link to={{ pathname: `/explore-services/${cat.categoryId}` }}>{cat.categoryName}</Link>                         
+                    </div>
                 )
             })
             this.setState({ categories: cats });
         });
+                                
     }
 
     render() {
