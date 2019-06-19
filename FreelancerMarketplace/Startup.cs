@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using FreelancerMarketplace.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FreelancerMarketplace
 {
@@ -27,6 +29,9 @@ namespace FreelancerMarketplace
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddDbContext<MarketplaceContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("FreelancerMarketplace")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
