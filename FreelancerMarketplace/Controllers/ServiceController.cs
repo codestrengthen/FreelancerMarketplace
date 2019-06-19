@@ -15,7 +15,6 @@ namespace FreelancerMarketplace.Controllers
     public class ServiceController : ControllerBase
     {
         private readonly MarketplaceContext _context;
-        private List<Service> AllServices { get; set; }
         public ServiceController(MarketplaceContext context)
         {
             _context = context;
@@ -37,10 +36,10 @@ namespace FreelancerMarketplace.Controllers
             return await servicesList;
         }
 
-        private void GetTestServices()
+        private List<Service> GetTestServices()
         {
             var now = DateTime.Now;
-            AllServices = new List<Service>()
+            return new List<Service>()
             {
                 new Service()
                 {

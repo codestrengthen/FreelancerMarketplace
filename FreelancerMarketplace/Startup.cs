@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using FreelancerMarketplace.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace FreelancerMarketplace
 {
@@ -51,6 +53,12 @@ namespace FreelancerMarketplace
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "UserImages")),
+                RequestPath  = "/MarketplaceAssets"
+            });
 
             app.UseMvc(routes =>
             {
