@@ -445,6 +445,33 @@ namespace FreelancerMarketplace.Models
                 FileName = "Image3.jpg",
                 CreatedDate = now
             });
+
+            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            {
+                ImageGuid = new Guid("f62294cf-306b-47da-888d-27dec03e4a5b"),
+                ItemId = 1,
+                Type = (int)ImageTypeEnum.Category,
+                FileName = "Audio.jpg",
+                CreatedDate = now
+            });
+
+            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            {
+                ImageGuid = new Guid("cac1dec7-9f40-45f9-a7b8-81638ef46705"),
+                ItemId = 2,
+                Type = (int)ImageTypeEnum.Category,
+                FileName = "Design_Graphics.jpg",
+                CreatedDate = now
+            });
+
+            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            {
+                ImageGuid = new Guid("423915ca-2ecf-4430-9431-93b33feca75a"),
+                ItemId = 3,
+                Type = (int)ImageTypeEnum.Category,
+                FileName = "WordPress.png",
+                CreatedDate = now
+            });
         }
 
         public DbSet<Author> Authors { get; set; }
