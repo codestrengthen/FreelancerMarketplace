@@ -20,6 +20,7 @@ export class Services extends Component {
                         <div id={serv.serviceId} key={serv.serviceId}>
                             <Link to={{ pathname: `/service-details/${serv.serviceId}` }}>{serv.serviceName}</Link>
                             <div dangerouslySetInnerHTML={{ __html: serv.serviceDescription }} />
+                            <p><strong>{serv.publicName}</strong></p>
                             <p>${serv.price} <span style={{ float: 'right' }}>{serv.revisions} days</span></p>
                         </div>
                     )

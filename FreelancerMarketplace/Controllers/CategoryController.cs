@@ -5,16 +5,24 @@ using System.Threading.Tasks;
 using FreelancerMarketplace.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FreelancerMarketplace.Controllers
 {
     [Route("api/[controller]")]
     public class CategoryController : ControllerBase
     {
-        [HttpGet("[action]")]
-        public ActionResult<IEnumerable<Category>> GetCategories()
+        private readonly MarketplaceContext _context;
+
+        public CategoryController(MarketplaceContext context)
         {
-            var categories = GetTestCategoryList();
+            _context = context;
+        }
+
+        [HttpGet("[action]")]
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
+        {
+            var categories = await _context.Categories.ToListAsync();
 
             return categories;
         }

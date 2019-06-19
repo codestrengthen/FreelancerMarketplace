@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FreelancerMarketplace.Models;
+using FreelancerMarketplace.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FreelancerMarketplace.Controllers
 {
@@ -12,17 +14,29 @@ namespace FreelancerMarketplace.Controllers
     [ApiController]
     public class ServiceController : ControllerBase
     {
+        private readonly MarketplaceContext _context;
         private List<Service> AllServices { get; set; }
-        public ServiceController()
+        public ServiceController(MarketplaceContext context)
         {
-            GetTestServices();
+            _context = context;
         }
 
         [HttpGet("{id}")]
-        public ActionResult<IEnumerable<Service>> GetServiceItems(int id)
+        public async Task<ActionResult<IEnumerable<ServiceListViewModel>>> GetServiceItems(int id)
         {
-            return AllServices.Where(s => s.CategoryId == id).ToList();
+            var servicesList = _context.Services.Where(s => s.CategoryId == id).Select(s => new ServiceListViewModel
+            {
+                ServiceId = s.ServiceId,
+                ServiceName = s.ServiceName,
+                ServiceDescription = s.ServiceDescription,
+                Price = s.Price,
+                Revisions = s.Revisions,
+                PublicName = s.Author.PublicName
+            }).ToListAsync();
+
+            return await servicesList;
         }
+
         private void GetTestServices()
         {
             var now = DateTime.Now;
