@@ -32,25 +32,17 @@ namespace FreelancerMarketplace.Controllers
             {
                 //first image, circle around to get the last image
                 if(imgNumber == 1)
-                {
                     newImgNumber = imgCount;
-                }
                 else
-                {
                     newImgNumber = imgNumber - 1;
-                }
             }
             else if(dir == "next")
             {
                 //last image, circle around to get first image
                 if(imgNumber == imgCount)
-                {
                     newImgNumber = 1;
-                }
                 else
-                {
                     newImgNumber = imgNumber + 1;
-                }
             }
 
             var newImgName = "Image" + newImgNumber + ".jpg";

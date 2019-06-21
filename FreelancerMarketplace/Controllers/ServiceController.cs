@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FreelancerMarketplace.Helpers;
 using FreelancerMarketplace.Models;
-using FreelancerMarketplace.Models.ViewModels;
+using FreelancerMarketplace.Models.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,9 +22,9 @@ namespace FreelancerMarketplace.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<ServiceListViewModel>>> GetServiceItems(int id)
+        public async Task<ActionResult<IEnumerable<ServiceListDTO>>> GetServiceItems(int id)
         {
-            var servicesList = _context.Services.Where(s => s.CategoryId == id).Select(s => new ServiceListViewModel
+            var servicesList = _context.Services.Where(s => s.CategoryId == id).Select(s => new ServiceListDTO
             {
                 ServiceId = s.ServiceId,
                 ServiceName = s.ServiceName,

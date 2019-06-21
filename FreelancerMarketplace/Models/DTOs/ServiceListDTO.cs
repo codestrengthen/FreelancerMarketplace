@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FreelancerMarketplace.Models.ViewModels
+namespace FreelancerMarketplace.Models.DTOs
 {
-    public class ServiceListViewModel
+    public class ServiceListDTO
     {
         public int ServiceId { get; set; }
         public string ServiceName { get; set; }
