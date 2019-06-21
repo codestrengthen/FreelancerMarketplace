@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import './ServiceListGallery.css';
+import AppConfig from '../../../appconfig.json';
 
 export class ServiceListGallery extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ export class ServiceListGallery extends Component {
     anotherImage(event, direction, serviceId, imgName) {
         event.preventDefault();
 
-        fetch('https://localhost:44394/api/serviceimage/' + serviceId + '?currentImg=' + imgName + '&dir=' + direction)
+        fetch(AppConfig.apiUrl + '/serviceimage/' + serviceId + '?currentImg=' + imgName + '&dir=' + direction)
             .then(results => {
                 return results.json();
             })
@@ -22,7 +23,7 @@ export class ServiceListGallery extends Component {
                 if (data.fileName) {
                     this.setState(
                     {
-                        img_path: `https://localhost:44394/marketplaceassets/service/${data.serviceId}/${data.fileName}`,
+                        img_path: `${AppConfig.userImageUrl}/service/${data.serviceId}/${data.fileName}`,
                         img_name: data.fileName
                     })
                 }

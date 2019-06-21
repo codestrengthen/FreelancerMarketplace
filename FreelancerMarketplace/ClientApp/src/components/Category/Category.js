@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import AppConfig from '../../appconfig.json';
 import './Category.css';
 
 class Category extends Component {
@@ -12,8 +12,7 @@ class Category extends Component {
     }
 
     componentDidMount() {
-      
-        fetch('https://localhost:44394/api/category/GetCategories')
+        fetch(AppConfig.apiUrl + '/category/GetCategories')
             .then(results => {
                 return results.json();
             })

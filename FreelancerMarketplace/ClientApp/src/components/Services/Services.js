@@ -1,6 +1,7 @@
 ﻿import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { ServiceListGallery } from './ServiceListGallery/ServiceListGallery';
+import AppConfig from '../../appconfig.json';
 
 export class Services extends Component {
     constructor(props) {
@@ -11,13 +12,13 @@ export class Services extends Component {
     }
 
     componentDidMount() {
-        fetch('https://localhost:44394/api/service/' + this.props.categoryId)
+        fetch(AppConfig.apiUrl + '/service/' + this.props.categoryId)
             .then(results => {
                 return results.json();
             })
             .then(data => {
                 let services = data.map((serv) => {
-                    let imagePath = `https://localhost:44394/marketplaceassets/service/${ serv.serviceId }/${ serv.image }`;
+                    let imagePath = `${ AppConfig.userImageUrl }/service/${ serv.serviceId }/${ serv.image }`;
                     return (
                         <React.Fragment>
                             <ServiceListGallery serviceId={serv.serviceId} imgPath={imagePath} imgName={serv.image} />
