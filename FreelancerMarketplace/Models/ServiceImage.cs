@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace FreelancerMarketplace.Models
 {
-    public class AppImage
+    public class ServiceImage
     {
         [Key]
         public Guid ImageGuid { get; set; }
-        public int ItemId { get; set; }
-        public int Type { get; set; }
-
+        public int ServiceId { get; set; }
         [MaxLength(200)]
         public string FileName { get; set; }
         public DateTime CreatedDate { get; set; }
+
+        public Service Service { get; set; }
     }
 }

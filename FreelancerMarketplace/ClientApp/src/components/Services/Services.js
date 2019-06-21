@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { ServiceListGallery } from './ServiceListGallery/ServiceListGallery';
 
 export class Services extends Component {
     constructor(props) {
@@ -16,13 +17,17 @@ export class Services extends Component {
             })
             .then(data => {
                 let services = data.map((serv) => {
+                    let imagePath = `https://localhost:44394/marketplaceassets/service/${ serv.serviceId }/${ serv.image }`;
                     return (
-                        <div id={serv.serviceId} key={serv.serviceId}>
-                            <Link to={{ pathname: `/service-details/${serv.serviceId}` }}>{serv.serviceName}</Link>
-                            <div dangerouslySetInnerHTML={{ __html: serv.serviceDescription }} />
-                            <p><strong>{serv.publicName}</strong></p>
-                            <p>${serv.price} <span style={{ float: 'right' }}>{serv.revisions} days</span></p>
-                        </div>
+                        <React.Fragment>
+                            <ServiceListGallery serviceId={serv.serviceId} imgPath={imagePath} imgName={serv.image} />
+                            <div id={serv.serviceId} key={serv.serviceId}>
+                                <Link to={{ pathname: `/service-details/${serv.serviceId}` }}>{serv.serviceName}</Link>
+                                <div dangerouslySetInnerHTML={{ __html: serv.serviceDescription }} />
+                                <p><strong>{serv.publicName}</strong></p>
+                                <p>${serv.price} <span style={{ float: 'right' }}>{serv.revisions} days</span></p>
+                            </div>
+                        </React.Fragment>
                     )
                 })
                 this.setState({ services: services });

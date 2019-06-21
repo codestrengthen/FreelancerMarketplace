@@ -28,5 +28,6 @@ namespace FreelancerMarketplace.Models
         public bool IsDeleted { get; set; }
         public Author Author { get; set; }
         public Category Category { get; set; }
+        public List<ServiceImage> ServiceImages { get; set; }
     }
 }

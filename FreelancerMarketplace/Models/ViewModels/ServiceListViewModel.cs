@@ -13,5 +13,6 @@ namespace FreelancerMarketplace.Models.ViewModels
         public decimal Price { get; set; }
         public int Revisions { get; set; }
         public string PublicName { get; set; }
+        public string Image { get; set; }
     }
 }

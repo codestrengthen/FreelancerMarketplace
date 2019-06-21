@@ -239,237 +239,187 @@ namespace FreelancerMarketplace.Models
                 IsDeleted = false
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("f3f59df5-a319-4507-85d5-26dba55f5ab2"),
-                ItemId = 11,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId = 11,
                 FileName = "Image1.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("cdd3e7d5-b083-44d0-a3eb-f5d4318e48fe"),
-                ItemId = 11,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId = 11,
                 FileName = "Image2.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("ca4d62a3-9661-48eb-95c5-089c4544ab74"),
-                ItemId = 11,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  11,              
                 FileName = "Image3.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("16e4deb9-9424-42f6-8055-fda87277be22"),
-                ItemId = 12,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  12,             
                 FileName = "Image1.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("409be3ac-0099-4418-aa4b-ae9f33d401f9"),
-                ItemId = 12,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  12,                
                 FileName = "Image2.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("bb4aeb71-c78f-4114-a75a-8ac2f35ddfb7"),
-                ItemId = 12,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  12,                
                 FileName = "Image3.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("7ea7f43e-9050-4221-ba77-ccd98f64f573"),
-                ItemId = 12,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  12,               
                 FileName = "Image4.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("82db4f17-a4ce-40a8-a361-e04603085925"),
-                ItemId = 21,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  21,               
                 FileName = "Image1.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("23bfce01-bbf5-46ff-8cca-8b0b8154c1af"),
-                ItemId = 21,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  21,                
                 FileName = "Image2.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("5d9ba06e-8790-4ac8-945d-50fb8fd92196"),
-                ItemId = 21,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  21,                
                 FileName = "Image3.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("787d303e-9f8b-489e-af8a-6f2d1f6507bd"),
-                ItemId = 21,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  21,                
                 FileName = "Image4.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("296ff26f-d0cc-4093-b4b0-80c4630f60db"),
-                ItemId = 21,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  21,                
                 FileName = "Image5.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("f0968ca2-2de4-466b-96bb-a0f499bde797"),
-                ItemId = 41,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  41,              
                 FileName = "Image1.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("a6d6c1f7-ebee-4076-b27e-d0654df3bffa"),
-                ItemId = 42,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  42,               
                 FileName = "Image1.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("d3a83850-43d8-4bb1-a293-95b2e81eecb4"),
-                ItemId = 42,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  42,                
                 FileName = "Image2.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("4706ce1a-88eb-4652-bcbb-608008e9a764"),
-                ItemId = 42,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  42,                
                 FileName = "Image3.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("a8cda40c-1b82-4136-9b4d-973d4ec36984"),
-                ItemId = 42,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  42,               
                 FileName = "Image4.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("24b2de9f-fab0-4ee7-891d-1b050f1e0541"),
-                ItemId = 42,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  42,                
                 FileName = "Image5.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("c51ba81c-b8ac-4823-8130-bca0957b8e4e"),
-                ItemId = 42,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  42,                
                 FileName = "Image6.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("c7293ad4-7859-42ac-aad5-732cc2f0221e"),
-                ItemId = 42,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  42,                
                 FileName = "Image7.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("53f3399c-7a69-42b9-ab5c-5afde7fd2c91"),
-                ItemId = 51,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  51,                
                 FileName = "Image1.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("03efed85-a590-4052-86a4-4b77114e0d5e"),
-                ItemId = 51,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  51,                
                 FileName = "Image2.jpg",
                 CreatedDate = now
             });
 
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
+            modelBuilder.Entity<ServiceImage>().HasData(new ServiceImage
             {
                 ImageGuid = new Guid("bd010fef-a2c4-4ba1-8708-3f434388c40b"),
-                ItemId = 51,
-                Type = (int)ImageTypeEnum.Service,
+                ServiceId =  51,               
                 FileName = "Image3.jpg",
-                CreatedDate = now
-            });
-
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
-            {
-                ImageGuid = new Guid("f62294cf-306b-47da-888d-27dec03e4a5b"),
-                ItemId = 1,
-                Type = (int)ImageTypeEnum.Category,
-                FileName = "Audio.jpg",
-                CreatedDate = now
-            });
-
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
-            {
-                ImageGuid = new Guid("cac1dec7-9f40-45f9-a7b8-81638ef46705"),
-                ItemId = 2,
-                Type = (int)ImageTypeEnum.Category,
-                FileName = "Design_Graphics.jpg",
-                CreatedDate = now
-            });
-
-            modelBuilder.Entity<AppImage>().HasData(new AppImage
-            {
-                ImageGuid = new Guid("423915ca-2ecf-4430-9431-93b33feca75a"),
-                ItemId = 3,
-                Type = (int)ImageTypeEnum.Category,
-                FileName = "WordPress.png",
                 CreatedDate = now
             });
         }
@@ -477,6 +427,6 @@ namespace FreelancerMarketplace.Models
         public DbSet<Author> Authors { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Service> Services { get; set; }
-        public DbSet<AppImage> AppImages { get; set; }
+        public DbSet<ServiceImage> ServiceImages { get; set; }
     }
 }

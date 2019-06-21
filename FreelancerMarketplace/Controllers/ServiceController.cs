@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FreelancerMarketplace.Helpers;
 using FreelancerMarketplace.Models;
 using FreelancerMarketplace.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
@@ -30,7 +31,9 @@ namespace FreelancerMarketplace.Controllers
                 ServiceDescription = s.ServiceDescription,
                 Price = s.Price,
                 Revisions = s.Revisions,
-                PublicName = s.Author.PublicName
+                PublicName = s.Author.PublicName,
+                Image = s.ServiceImages.OrderBy(si => si.FileName).FirstOrDefault() != null
+                        ? s.ServiceImages.OrderBy(si => si.FileName).First().FileName : null
             }).ToListAsync();
 
             return await servicesList;
