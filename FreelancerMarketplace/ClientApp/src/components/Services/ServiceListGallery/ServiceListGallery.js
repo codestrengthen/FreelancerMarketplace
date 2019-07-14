@@ -29,8 +29,8 @@ export class ServiceListGallery extends Component {
                 }
             })
     }
-
-    render() {        
+            
+    render() {
         return (
             <div className="service_gallery">
                 <img src={this.state.img_path} alt="" />

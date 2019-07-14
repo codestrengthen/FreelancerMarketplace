@@ -21,23 +21,34 @@ namespace FreelancerMarketplace.Controllers
             _context = context;
         }
 
+        //sample Url: https://localhost:44394/api/service/1?term=bbc
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<ServiceListDTO>>> GetServiceItems(int id)
+        public async Task<ActionResult<IEnumerable<ServiceListDTO>>> GetServiceItems(int id, string term)
         {
-            var servicesList = _context.Services.Where(s => s.CategoryId == id).Select(s => new ServiceListDTO
+            IQueryable<Service> services = _context.Services
+                                       .Where(s => s.CategoryId == id);
+            if(!string.IsNullOrEmpty(term))
             {
-                ServiceId = s.ServiceId,
-                ServiceName = s.ServiceName,
-                ServiceDescription = s.ServiceDescription,
-                Price = s.Price,
-                Revisions = s.Revisions,
-                PublicName = s.Author.PublicName,
-                Image = s.ServiceImages.OrderBy(si => si.FileName).FirstOrDefault() != null
-                        ? s.ServiceImages.OrderBy(si => si.FileName).First().FileName : null
-            }).ToListAsync();
+                services = services.Where(s => s.ServiceDescription.Contains(term));
+            }
+            
+            var servicesList = services.Select(s => new ServiceListDTO
+                                        {
+                                            ServiceId = s.ServiceId,
+                                            ServiceName = s.ServiceName,
+                                            ServiceDescription = s.ServiceDescription,
+                                            Price = s.Price,
+                                            Revisions = s.Revisions,
+                                            PublicName = s.Author.PublicName,
+                                            Image = s.ServiceImages.OrderBy(si => si.FileName).FirstOrDefault() != null
+                                                    ? s.ServiceImages.OrderBy(si => si.FileName).First().FileName : null
+                                        }).ToListAsync();
 
             return await servicesList;
         }
+
+        //[HttpPost]
+        //public async Task<ActionResult> 
 
         private List<Service> GetTestServices()
         {
